@@ -1,0 +1,17 @@
+<h2>Find your Best Job(only for US)</h2>
+<%= form_tag("/jobs/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q,params[:q]) %>
+  <%= label_tag(:l, "Where:") %>
+  <%= text_field_tag(:l,params[:l]) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<%if !@jobs.nil? && @jobs.present?%>
+<% @jobs.each do |job|%>
+<%=job["jobtitle"]%>,<%=job["city"]%>,<%=job["state"]%>(<%=job["country"]%>)
+</br>
+<%end%>
+<%else%>
+</br></br>
+<span>No Jobs Found</span>
+<%end%>
