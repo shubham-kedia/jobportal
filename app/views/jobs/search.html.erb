@@ -8,10 +8,15 @@
 <% end %>
 <%if !@jobs.nil? && @jobs.present?%>
 <% @jobs.each do |job|%>
-<%=job["jobtitle"]%>,<%=job["city"]%>,<%=job["state"]%>(<%=job["country"]%>)
+<%=job["jobtitle"]%>,<%=job["city"]%>,<%=job["state"]%>(<%=job["country"]%>),
+<%=link_to "Apply Here",job["url"],:target => "_blank"%>
 </br>
 <%end%>
 <%else%>
 </br></br>
+<%if params[:l].present? || params[:q].present?%>
 <span>No Jobs Found</span>
+<%else%>
+<span>Search for your Dream Job</span>
+<%end%>
 <%end%>
