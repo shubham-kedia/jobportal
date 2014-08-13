@@ -8,7 +8,7 @@ class JobsController < ApplicationController
   def search
     @device= URI.encode(request.user_agent)
     @ip=request.remote_ip
-    @query=params[:q]||=""
+    @query=URI.encode(params[:q]||="")
     @loc=URI.encode(params[:l]||="")
     @jobs=[]
     if @query.present? || @loc.present?
