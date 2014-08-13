@@ -9,5 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= theme_switcher
+ *= job_blue.responsive
+ *= font-awesome
  *= require_tree .
  */
