@@ -12,6 +12,9 @@
  */
 /*@white: #C2C2C2;*/
 /*@red:                   #9d261d;*/
+.w100{
+  width: 100% !important;
+}
 .clearfix {
   *zoom: 1;
 }
@@ -363,9 +366,6 @@ a:focus {
   float: left;
   margin-left: 2.127659574468085%;
   *margin-left: 2.074468085106383%;
-}
-.row-fluid [class*="span"]:first-child {
-  margin-left: 0;
 }
 .row-fluid .controls-row [class*="span"] + [class*="span"] {
   margin-left: 2.127659574468085%;

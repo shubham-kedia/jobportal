@@ -3,6 +3,7 @@ Jobsearch::Application.routes.draw do
   root 'jobs#search'
   get "jobs/index"
   get "jobs/search"
+  get "jobs/browse"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -215,7 +215,10 @@
     margin-left: 2.564102564102564%;
     *margin-left: 2.5109110747408616%;
   }
-  .row-fluid [class*="span"]:first-child {
+  .row-fluid [class*="span"]:nth-child(1) {
+    margin-left: 0;
+  }
+  .row-fluid .marginleft0{
     margin-left: 0;
   }
   .row-fluid .controls-row [class*="span"] + [class*="span"] {
@@ -564,7 +567,7 @@
     margin-left: 2.7624309392265194%;
     *margin-left: 2.709239449864817%;
   }
-  .row-fluid [class*="span"]:first-child {
+  .row-fluid [class*="span"]:nth-child(1) {
     margin-left: 0;
   }
   .row-fluid .controls-row [class*="span"] + [class*="span"] {
