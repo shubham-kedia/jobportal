@@ -59,7 +59,7 @@
         <div class="span2 browse_advanced">
           <a href="#">Advanced search</a>
           <br />
-          <a href="#">Browse jobs</a>
+          <a href="/jobs/browse">Browse jobs</a>
         </div>
         <% end %> <!--End Form-->
       </div>
@@ -71,7 +71,7 @@
   <div class="row-fluid">
     
     <div class="span9">
-      <h2>914 job listings found</h2>
+      <h2><%=@browse_jobs_count["totalResults"]%> job listings found</h2>
       <table class="table table-striped">
         <tbody>
           <%if !@browse_jobs.nil? && @browse_jobs.present?%>
@@ -81,7 +81,7 @@
             <td><strong><a href="<%=job["url"]%>" target="_blank"><%=job["jobtitle"]%></a></strong><br />
               <a href="#"><%=job["company"]%></a> &ndash; Posted by <a href="#"><%=job["source"]%></a>
             </td>
-            <td><%=job["city"]%><br /><%=job["state"]%>,<%=job["country"]%></td>
+            <td><%=job["city"].present? ? job["city"] : ""%><br /><%=job["state"].present? ? job["state"]+"," : ""%><%=job["country"].present? ? job["country"] : "-"%></td>
             <td > <%=job["date"]%></td>
           </tr>
           <%end%>
@@ -102,37 +102,23 @@
       <div class="pagination pull-right">
         <ul>
           <li>
-            <a href="#">Prev</a>
+            <% if @counter>0%>
+            <a href="/jobs/browse?utf8=✓&q=<%=params[:q]%>&l=<%=params[:l]%>&commit=Search&page=<%=(@counter-1)*10%>" >Prev</a>
+            <%else%>
+            <a href="javascript: void(0)" >Prev</a>
+            <%end%>
           </li>
-          <li class="active">
-            <a href="#">1</a>
+          <%if @pagen<=@topages%>
+          <%for i in @counter*10..(@counter*10+9)%>
+          <%if (i!=0)%>
+          <li class="<%=@pagen==i ? 'active' : '' %>">
+            <a href="/jobs/browse?utf8=✓&q=<%=params[:q]%>&l=<%=params[:l]%>&commit=Search&page=<%=i%>"><%=i%></a>
           </li>
+          <%end%>
+          <%end%>
+          <%end%>
           <li>
-            <a href="#">2</a>
-          </li>
-          <li>
-            <a href="#">3</a>
-          </li>
-          <li>
-            <a href="#">4</a>
-          </li>
-          <li>
-            <a href="#">5</a>
-          </li>
-          <li>
-            <a href="#">6</a>
-          </li>
-          <li>
-            <a href="#">7</a>
-          </li>
-          <li>
-            <a href="#">8</a>
-          </li>
-          <li>
-            <a href="#">9</a>
-          </li>
-          <li>
-            <a href="#">Next</a>
+            <a href="/jobs/browse?utf8=✓&q=<%=params[:q]%>&l=<%=params[:l]%>&commit=Search&page=<%=(@counter+1)*10%>">Next</a>
           </li>
         </ul>
       </div>
