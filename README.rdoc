@@ -13,4 +13,4 @@ Things you may want to cover:
  
  This app is based on this api http://www.indeed.com/jsp/apiinfo.jsp.
  
- * Demo App url: https://jobportal2.herokuapp.com
+* Demo App url: https://jobportal2.herokuapp.com
