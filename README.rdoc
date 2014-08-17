@@ -11,6 +11,6 @@ Things you may want to cover:
 
 * Author:Shubham kedia ; shubham.kedia2010@gmail.com
  
- This app is based on this api http://www.indeed.com/jsp/apiinfo.jsp.
+*This app is based on this api http://www.indeed.com/jsp/apiinfo.jsp.
  
 * Demo App url: https://jobportal2.herokuapp.com
