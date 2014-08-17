@@ -7,7 +7,10 @@ Things you may want to cover:
 
 * Ruby 2.1 and rail 4.2 is used
 
-* No db is used
+* Full code hosted on bitbucket
+
+* Author:Shubham kedia ; shubham.kedia2010@gmail.com
  
  This app is based on this api http://www.indeed.com/jsp/apiinfo.jsp.
- App url: https://jobportal2.herokuapp.com
+ 
+ * Demo App url: https://jobportal2.herokuapp.com
